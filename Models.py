@@ -9,4 +9,6 @@ class Classifier(nn.Module):
         super().__init__()
         self.model = ViTAutoEnc(
                     in_channels=4,
+                    out_channels=4,
+                    img_size=(96, 96, 96),
            
