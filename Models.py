@@ -4,4 +4,6 @@ import torch.nn as nn
 from collections import OrderedDict
 from monai.networks.nets import ViTAutoEnc
 
-class 
+class Classifier(nn.Module):    
+    def __init__(self):
+     
