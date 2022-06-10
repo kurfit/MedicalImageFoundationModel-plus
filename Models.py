@@ -7,4 +7,6 @@ from monai.networks.nets import ViTAutoEnc
 class Classifier(nn.Module):    
     def __init__(self):
         super().__init__()
-        self.model = ViTAuto
+        self.model = ViTAutoEnc(
+                    in_channels=4,
+           
