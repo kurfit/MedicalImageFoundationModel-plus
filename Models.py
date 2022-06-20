@@ -11,4 +11,6 @@ class Classifier(nn.Module):
                     in_channels=4,
                     out_channels=4,
                     img_size=(96, 96, 96),
-           
+                    patch_size=(16, 16, 16),
+                    pos_embed='conv',
+  
