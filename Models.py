@@ -13,4 +13,5 @@ class Classifier(nn.Module):
                     img_size=(96, 96, 96),
                     patch_size=(16, 16, 16),
                     pos_embed='conv',
-  
+                    num_heads=32,
+                    n
