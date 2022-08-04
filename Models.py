@@ -14,4 +14,6 @@ class Classifier(nn.Module):
                     patch_size=(16, 16, 16),
                     pos_embed='conv',
                     num_heads=32,
-                    n
+                    num_layers=16,
+                    hidden_size=2048,
+                    mlp_d
