@@ -19,4 +19,5 @@ class Classifier(nn.Module):
                     mlp_dim=3072
         )
         '''Load the pre-trained model parameters'''
-  
+        logdir_path = os.path.normpath('./Pretrained_models')
+        self
