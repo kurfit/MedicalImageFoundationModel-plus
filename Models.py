@@ -16,4 +16,7 @@ class Classifier(nn.Module):
                     num_heads=32,
                     num_layers=16,
                     hidden_size=2048,
-                    mlp_d
+                    mlp_dim=3072
+        )
+        '''Load the pre-trained model parameters'''
+  
