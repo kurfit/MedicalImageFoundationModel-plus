@@ -20,4 +20,5 @@ class Classifier(nn.Module):
         )
         '''Load the pre-trained model parameters'''
         logdir_path = os.path.normpath('./Pretrained_models')
-        self.model_path = os.path.join(logdir_path, 'SSL_Vi
+        self.model_path = os.path.join(logdir_path, 'SSL_ViT_Block16.pth') # or SSL_ViT_Block4.pth
+        vit_weights =
