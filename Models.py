@@ -23,4 +23,6 @@ class Classifier(nn.Module):
         self.model_path = os.path.join(logdir_path, 'SSL_ViT_Block16.pth') # or SSL_ViT_Block4.pth
         vit_weights = torch.load(self.model_path, map_location=torch.device('cpu'))
         vit_weights_sp = OrderedDict()
-   
+        for k,v in vit_weights.items():
+            name = k[7:]
+  
