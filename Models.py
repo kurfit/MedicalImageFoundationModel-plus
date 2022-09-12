@@ -25,4 +25,5 @@ class Classifier(nn.Module):
         vit_weights_sp = OrderedDict()
         for k,v in vit_weights.items():
             name = k[7:]
-  
+            vit_weights_sp[name]=v
+        self.model.l
