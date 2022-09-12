@@ -26,4 +26,6 @@ class Classifier(nn.Module):
         for k,v in vit_weights.items():
             name = k[7:]
             vit_weights_sp[name]=v
-        self.model.l
+        self.model.load_state_dict(vit_weights_sp)
+        
+        '''Define the pooling l
