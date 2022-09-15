@@ -28,4 +28,5 @@ class Classifier(nn.Module):
             vit_weights_sp[name]=v
         self.model.load_state_dict(vit_weights_sp)
         
-        '''Define the pooling l
+        '''Define the pooling layer and fully connected layers'''
+        self.pool = nn.AvgPoo
