@@ -33,4 +33,6 @@ class Classifier(nn.Module):
         self.FC = nn.Sequential(
             nn.Linear(72*682,128),
             nn.ReLU(),
-            nn
+            nn.Linear(128, 64),
+            nn.ReLU(),
+            nn.Linear(
