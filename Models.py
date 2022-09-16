@@ -31,4 +31,6 @@ class Classifier(nn.Module):
         '''Define the pooling layer and fully connected layers'''
         self.pool = nn.AvgPool2d(3,stride=3)
         self.FC = nn.Sequential(
-      
+            nn.Linear(72*682,128),
+            nn.ReLU(),
+            nn
