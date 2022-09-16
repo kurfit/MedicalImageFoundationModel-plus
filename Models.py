@@ -29,4 +29,6 @@ class Classifier(nn.Module):
         self.model.load_state_dict(vit_weights_sp)
         
         '''Define the pooling layer and fully connected layers'''
-        self.pool = nn.AvgPoo
+        self.pool = nn.AvgPool2d(3,stride=3)
+        self.FC = nn.Sequential(
+      
