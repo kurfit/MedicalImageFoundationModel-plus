@@ -38,4 +38,6 @@ class Classifier(nn.Module):
             nn.Linear(64, 2),
             )
     def forward(self, x):
-       
+        x = self.model(x)[1][15]
+        x = self.pool(x)
+ 
