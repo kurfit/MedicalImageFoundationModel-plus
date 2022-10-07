@@ -40,4 +40,4 @@ class Classifier(nn.Module):
     def forward(self, x):
         x = self.model(x)[1][15]
         x = self.pool(x)
- 
+        x = torch.flatten(x, 1) # flatten all dimensions exc
