@@ -14,3 +14,7 @@ from monai.transforms import (
     Resized,
     ScaleIntensityd
 )
+
+from Models import Classifier
+
+os.environ["CUDA_VISIBLE_DE
