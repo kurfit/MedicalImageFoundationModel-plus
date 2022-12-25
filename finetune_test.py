@@ -24,4 +24,5 @@ def main():
     logging.basicConfig(stream=sys.stdout, level=logging.INFO)
     
     def get_data(path):
-        #normal && tumor  meningioma
+        #normal && tumor  meningioma && glioma  IDH-wt && IDH-mut
+        data_0_dir = os.path.j
