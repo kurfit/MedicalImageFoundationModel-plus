@@ -26,4 +26,4 @@ def main():
     def get_data(path):
         #normal && tumor  meningioma && glioma  IDH-wt && IDH-mut
         data_0_dir = os.path.join(path,'') #Name of the class labeled 0, e.g.: normal
-    
+        data_1_dir = os.path.join(path,'') #Name of the class la
