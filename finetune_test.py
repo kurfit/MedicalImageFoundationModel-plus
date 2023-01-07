@@ -30,4 +30,5 @@ def main():
         
         data_0=list()    
         for path,dirs,files in os.walk(data_0_dir):
-          
+            for f in fnmatch.filter(files,'*.nii.gz'):
+                d
