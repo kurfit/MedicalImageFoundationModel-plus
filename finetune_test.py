@@ -34,4 +34,5 @@ def main():
                 data_0.append(os.path.join(path,f))             
                  
         data_1=list()
-        for path,dirs,files in os.w
+        for path,dirs,files in os.walk(data_1_dir):
+            for f in fnmatch.filter(f
