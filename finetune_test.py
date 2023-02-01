@@ -36,4 +36,6 @@ def main():
         data_1=list()
         for path,dirs,files in os.walk(data_1_dir):
             for f in fnmatch.filter(files,'*.nii.gz'):
-                data_1.append(os.path.joi
+                data_1.append(os.path.join(path,f)) 
+           
+        # 2 binary labels for cla
