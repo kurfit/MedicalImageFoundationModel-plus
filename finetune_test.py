@@ -38,4 +38,5 @@ def main():
             for f in fnmatch.filter(files,'*.nii.gz'):
                 data_1.append(os.path.join(path,f)) 
            
-        # 2 binary labels for cla
+        # 2 binary labels for classification: tumor and normal
+        files_0 = [{"img": img[0], "labe
