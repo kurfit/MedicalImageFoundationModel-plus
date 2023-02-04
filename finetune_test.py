@@ -39,4 +39,5 @@ def main():
                 data_1.append(os.path.join(path,f)) 
            
         # 2 binary labels for classification: tumor and normal
-        files_0 = [{"img": img[0], "labe
+        files_0 = [{"img": img[0], "label": 0} for img in zip(data_0)]
+        files_1 = [{"img"
