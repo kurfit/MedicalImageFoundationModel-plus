@@ -43,4 +43,4 @@ def main():
         files_1 = [{"img": img[0], "label": 1} for img in zip(data_1)]
         data = files_0 + files_1
         random.shuffle(data)
-    
+        print('Total Number of training Data Samples:{}'.format(len(da
