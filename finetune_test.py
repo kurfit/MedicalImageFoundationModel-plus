@@ -46,4 +46,6 @@ def main():
         print('Total Number of training Data Samples:{}'.format(len(data)))
         return(data)
  
-    test_files = get_dat
+    test_files = get_data('/path/to/test_data')
+    
+    # Define transforms
