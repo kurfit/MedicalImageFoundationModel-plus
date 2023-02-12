@@ -48,4 +48,7 @@ def main():
  
     test_files = get_data('/path/to/test_data')
     
-    # Define transforms
+    # Define transforms for image
+    transforms = Compose(
+        [
+      
