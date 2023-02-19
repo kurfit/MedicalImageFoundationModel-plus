@@ -51,4 +51,4 @@ def main():
     # Define transforms for image
     transforms = Compose(
         [
-      
+            LoadImaged(keys=["img"], ensure_channel_first=T
