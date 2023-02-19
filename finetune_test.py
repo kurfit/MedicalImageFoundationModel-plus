@@ -53,4 +53,8 @@ def main():
         [
             LoadImaged(keys=["img"], ensure_channel_first=True),
             ScaleIntensityd(keys=["img"]),
-            Resize
+            Resized(keys=["img"], spatial_size=(96, 96, 96))
+        ]
+    )
+  
+ 
