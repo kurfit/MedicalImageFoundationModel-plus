@@ -57,4 +57,5 @@ def main():
         ]
     )
   
- 
+    #Define the classifier
+    device = torch.device("cuda" if torc
