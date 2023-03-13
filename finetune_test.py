@@ -63,4 +63,7 @@ def main():
     net = Classifier()
     net = net.to(device)
 
-    net.load_state_dict(torch.load(
+    net.load_state_dict(torch.load("best_metric_classifier.pth"))
+    net.eval()
+ 
+    batch_size = 
