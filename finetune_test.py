@@ -69,4 +69,5 @@ def main():
     batch_size = 24
  
     # create a test data loader
-    test_ds = Cac
+    test_ds = CacheDataset(data=test_files, transform=transforms)
+    t
