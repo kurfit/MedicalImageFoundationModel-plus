@@ -66,4 +66,7 @@ def main():
     net.load_state_dict(torch.load("best_metric_classifier.pth"))
     net.eval()
  
-    batch_size = 
+    batch_size = 24
+ 
+    # create a test data loader
+    test_ds = Cac
