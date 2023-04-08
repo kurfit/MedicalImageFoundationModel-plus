@@ -70,4 +70,4 @@ def main():
  
     # create a test data loader
     test_ds = CacheDataset(data=test_files, transform=transforms)
-    t
+    test_loader = DataLoader(test_ds, batch_size=batch_size, num_workers=4
