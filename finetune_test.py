@@ -73,4 +73,6 @@ def main():
     test_loader = DataLoader(test_ds, batch_size=batch_size, num_workers=4, pin_memory=torch.cuda.is_available())
 
     # test classifier
-    wi
+    with torch.no_grad():
+        num_correct = 0.0
+        metric
