@@ -70,4 +70,7 @@ def main():
  
     # create a test data loader
     test_ds = CacheDataset(data=test_files, transform=transforms)
-    test_loader = DataLoader(test_ds, batch_size=batch_size, num_workers=4
+    test_loader = DataLoader(test_ds, batch_size=batch_size, num_workers=4, pin_memory=torch.cuda.is_available())
+
+    # test classifier
+    wi
