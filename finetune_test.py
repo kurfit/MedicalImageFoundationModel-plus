@@ -75,4 +75,6 @@ def main():
     # test classifier
     with torch.no_grad():
         num_correct = 0.0
-        metric
+        metric_count = 0
+        saver = CSVSaver(output_dir="./output")
+ 
