@@ -78,4 +78,4 @@ def main():
         metric_count = 0
         saver = CSVSaver(output_dir="./output")
         for test_data in test_loader:
-            test_images, te
+            test_images, test_labels = test_data["img"].to(device), test_data["label"].to(
