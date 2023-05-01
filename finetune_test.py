@@ -80,3 +80,4 @@ def main():
         for test_data in test_loader:
             test_images, test_labels = test_data["img"].to(device), test_data["label"].to(device)
             test_outputs = net(test_images).argmax(dim=1)
+            value = torch.eq(test_outputs, test_label
