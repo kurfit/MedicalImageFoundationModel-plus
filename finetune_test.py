@@ -83,4 +83,5 @@ def main():
             value = torch.eq(test_outputs, test_labels)
             metric_count += len(value)
             num_correct += value.sum().item()
-            saver.save_batch(
+            saver.save_batch(test_outputs, test_data["img"].meta)
+        metric = num_correct / metri
