@@ -86,4 +86,7 @@ def main():
             saver.save_batch(test_outputs, test_data["img"].meta)
         metric = num_correct / metric_count
         print("evaluation metric:", metric)
-        saver.finalize(
+        saver.finalize()  
+
+if __name__=="__main__":
+    main()
