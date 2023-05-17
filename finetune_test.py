@@ -84,4 +84,6 @@ def main():
             metric_count += len(value)
             num_correct += value.sum().item()
             saver.save_batch(test_outputs, test_data["img"].meta)
-        metric = num_correct / metri
+        metric = num_correct / metric_count
+        print("evaluation metric:", metric)
+        saver.finalize(
