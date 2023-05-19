@@ -8,4 +8,5 @@ import logging
 import torch.nn as nn
 from monai.metrics import ROCAUCMetric
 from collections import OrderedDict
-from torch.optim.lr_scheduler import
+from torch.optim.lr_scheduler import CosineAnnealingLR
+from monai.networks.nets import ViTAu
