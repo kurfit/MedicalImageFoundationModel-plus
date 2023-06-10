@@ -18,4 +18,10 @@ from monai.transforms import (
     Resized,
     Activations, 
     AsDiscrete,
-  
+    ScaleIntensityd
+)
+
+from Models import Classifier
+
+
+os.envir
