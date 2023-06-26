@@ -24,4 +24,6 @@ from monai.transforms import (
 from Models import Classifier
 
 
-os.envir
+os.environ["CUDA_VISIBLE_DEVICES"] = "0" #Select the GPU, default 0
+
+def
