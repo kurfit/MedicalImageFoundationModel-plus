@@ -28,4 +28,6 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "0" #Select the GPU, default 0
 
 def main():
     monai.config.print_config()
-    logging.basicCo
+    logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+    
+    def get_data(p
