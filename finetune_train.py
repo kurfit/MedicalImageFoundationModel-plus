@@ -30,4 +30,6 @@ def main():
     monai.config.print_config()
     logging.basicConfig(stream=sys.stdout, level=logging.INFO)
     
-    def get_data(p
+    def get_data(path):
+        #normal && tumor  meningioma && glioma  IDH-wt && IDH-mut
+ 
