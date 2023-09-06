@@ -48,4 +48,6 @@ def main():
         # 2 binary labels for classification: tumor and normal
         files_0 = [{"img": img[0], "label": 0} for img in zip(data_0)]
         files_1 = [{"img": img[0], "label": 1} for img in zip(data_1)]
-        da
+        data = files_0 + files_1
+        random.shuffle(data)
+       
