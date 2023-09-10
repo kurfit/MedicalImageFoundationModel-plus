@@ -53,4 +53,5 @@ def main():
         print('Total Number of training Data Samples:{}'.format(len(data)))
         return(data)
     
-    train_files =
+    train_files = get_data('/path/to/train_data')
+    val_files = get_data('/pat
