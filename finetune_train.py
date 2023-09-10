@@ -54,4 +54,6 @@ def main():
         return(data)
     
     train_files = get_data('/path/to/train_data')
-    val_files = get_data('/pat
+    val_files = get_data('/path/to/validation_data')
+
+    # Define transforms for ima
