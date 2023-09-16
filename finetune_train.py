@@ -56,4 +56,7 @@ def main():
     train_files = get_data('/path/to/train_data')
     val_files = get_data('/path/to/validation_data')
 
-    # Define transforms for ima
+    # Define transforms for image
+    transforms = Compose(
+        [
+            LoadImaged(keys=
