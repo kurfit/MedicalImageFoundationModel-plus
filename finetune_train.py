@@ -60,4 +60,6 @@ def main():
     transforms = Compose(
         [
             LoadImaged(keys=["img"], ensure_channel_first=True),
-            ScaleIntensityd(keys=["img"])
+            ScaleIntensityd(keys=["img"]),
+            Resized(keys=["img"], spatial_size=(96, 96, 96))
+      
