@@ -62,4 +62,6 @@ def main():
             LoadImaged(keys=["img"], ensure_channel_first=True),
             ScaleIntensityd(keys=["img"]),
             Resized(keys=["img"], spatial_size=(96, 96, 96))
-      
+        ]
+    )
+    post_pred = Compose([Activations(soft
