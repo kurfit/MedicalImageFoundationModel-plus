@@ -59,4 +59,5 @@ def main():
     # Define transforms for image
     transforms = Compose(
         [
-            LoadImaged(keys=
+            LoadImaged(keys=["img"], ensure_channel_first=True),
+            ScaleIntensityd(keys=["img"])
