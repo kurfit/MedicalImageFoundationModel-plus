@@ -64,4 +64,5 @@ def main():
             Resized(keys=["img"], spatial_size=(96, 96, 96))
         ]
     )
-    post_pred = Compose([Activations(soft
+    post_pred = Compose([Activations(softmax=True)])
+    post_label = Compose([AsDiscrete(to_onehot=2)]) 
