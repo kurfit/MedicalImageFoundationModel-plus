@@ -65,4 +65,7 @@ def main():
         ]
     )
     post_pred = Compose([Activations(softmax=True)])
-    post_label = Compose([AsDiscrete(to_onehot=2)]) 
+    post_label = Compose([AsDiscrete(to_onehot=2)])   
+  
+    #Define the classifier
+    device = torch
