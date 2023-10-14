@@ -68,4 +68,5 @@ def main():
     post_label = Compose([AsDiscrete(to_onehot=2)])   
   
     #Define the classifier
-    device = torch
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+     
