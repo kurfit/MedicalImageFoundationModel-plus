@@ -72,3 +72,6 @@ def main():
         
     net = Classifier()
     net = net.to(device)    
+ 
+    # Define Hyper-paramters for training loop
+    max_epoch = 20
