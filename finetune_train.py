@@ -69,4 +69,6 @@ def main():
   
     #Define the classifier
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-     
+        
+    net = Classifier()
+    net = net.to(device)    
