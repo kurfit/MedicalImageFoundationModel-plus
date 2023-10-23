@@ -74,4 +74,9 @@ def main():
     net = net.to(device)    
  
     # Define Hyper-paramters for training loop
-    max_epoch = 20
+    max_epoch = 200
+    val_interval = 1
+    batch_size = 36
+    lr = 1e-5
+
+    #D
