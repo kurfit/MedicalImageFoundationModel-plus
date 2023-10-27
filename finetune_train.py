@@ -80,4 +80,5 @@ def main():
     lr = 1e-5
 
     #Define loss & optimizer & learning rate scheduler
-    loss_function = nn.CrossEnt
+    loss_function = nn.CrossEntropyLoss()
+    optimizer = torch.optim.AdamW(net.parameters(
