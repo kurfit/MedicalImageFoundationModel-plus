@@ -79,4 +79,5 @@ def main():
     batch_size = 36
     lr = 1e-5
 
-    #D
+    #Define loss & optimizer & learning rate scheduler
+    loss_function = nn.CrossEnt
