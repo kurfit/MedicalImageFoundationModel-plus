@@ -83,4 +83,6 @@ def main():
     loss_function = nn.CrossEntropyLoss()
     optimizer = torch.optim.AdamW(net.parameters(), lr=lr, weight_decay=lr)
     lr_scheduler = CosineAnnealingLR(optimizer=optimizer, T_max=max_epoch, eta_min=1e-6)
+    auc_metric = ROCAUCMetric()
     
+    # create a tra
