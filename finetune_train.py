@@ -82,4 +82,5 @@ def main():
     #Define loss & optimizer & learning rate scheduler
     loss_function = nn.CrossEntropyLoss()
     optimizer = torch.optim.AdamW(net.parameters(), lr=lr, weight_decay=lr)
-    lr_scheduler = CosineAnnea
+    lr_scheduler = CosineAnnealingLR(optimizer=optimizer, T_max=max_epoch, eta_min=1e-6)
+    
