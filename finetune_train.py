@@ -86,4 +86,5 @@ def main():
     auc_metric = ROCAUCMetric()
     
     # create a training data loader
-    train_ds =  CacheDataset(data=train_files, t
+    train_ds =  CacheDataset(data=train_files, transform=transforms)
+    train_loader = DataLoader(train_ds, ba
