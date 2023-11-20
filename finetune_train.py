@@ -87,4 +87,6 @@ def main():
     
     # create a training data loader
     train_ds =  CacheDataset(data=train_files, transform=transforms)
-    train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=4, pi
+    train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=torch.cuda.is_available())
+
+    # create a
