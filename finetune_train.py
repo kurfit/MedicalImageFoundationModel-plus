@@ -89,4 +89,5 @@ def main():
     train_ds =  CacheDataset(data=train_files, transform=transforms)
     train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=torch.cuda.is_available())
 
-    # create a
+    # create a validation data loader
+    val_ds =  CacheDataset(data=val_files,
