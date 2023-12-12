@@ -93,4 +93,5 @@ def main():
     val_ds =  CacheDataset(data=val_files, transform=transforms)
     val_loader = DataLoader(val_ds, batch_size=batch_size, num_workers=4, pin_memory=torch.cuda.is_available())
 
- 
+    learning_rate = []
+    train_loss_values 
