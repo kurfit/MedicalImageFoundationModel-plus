@@ -98,4 +98,6 @@ def main():
     accuracy_values = []
     auc_values = []
 
-    # start a typ
+    # start a typical PyTorch training and validation
+    best_metric = -1
+   
