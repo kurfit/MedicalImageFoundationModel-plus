@@ -102,4 +102,6 @@ def main():
     best_metric = -1
     best_metric_epoch = -1
     writer = SummaryWriter()
-    f
+    for epoch in range(max_epoch):
+        print("-" * 10)
+        pri
