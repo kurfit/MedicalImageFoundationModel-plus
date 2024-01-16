@@ -106,4 +106,7 @@ def main():
         print("-" * 10)
         print(f"epoch {epoch + 1}/{max_epoch}")
         net.train()
-        epoch_loss 
+        epoch_loss = 0
+        step = 0
+        for batch_data in train_loader:
+          
