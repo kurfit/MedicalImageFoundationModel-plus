@@ -104,4 +104,6 @@ def main():
     writer = SummaryWriter()
     for epoch in range(max_epoch):
         print("-" * 10)
-        pri
+        print(f"epoch {epoch + 1}/{max_epoch}")
+        net.train()
+        epoch_loss 
