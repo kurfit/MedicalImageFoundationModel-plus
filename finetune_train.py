@@ -109,4 +109,5 @@ def main():
         epoch_loss = 0
         step = 0
         for batch_data in train_loader:
-          
+            step += 1
+            inputs, labels = batch_data["img"].to
