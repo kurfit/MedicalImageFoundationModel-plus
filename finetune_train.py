@@ -113,4 +113,5 @@ def main():
             inputs, labels = batch_data["img"].to(device), batch_data["label"].to(device)
             optimizer.zero_grad()
             outputs = net(inputs)
-            
+            loss = loss_function(outputs, labels)
+            loss.backward()
