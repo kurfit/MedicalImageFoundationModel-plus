@@ -110,4 +110,5 @@ def main():
         step = 0
         for batch_data in train_loader:
             step += 1
-            inputs, labels = batch_data["img"].to
+            inputs, labels = batch_data["img"].to(device), batch_data["label"].to(device)
+            optimi
