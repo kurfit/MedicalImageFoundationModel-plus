@@ -117,4 +117,5 @@ def main():
             loss.backward()
             optimizer.step()
             lr_scheduler.step()
-      
+            current_lr = lr_scheduler.get_last_lr()[0]
+            learnin
