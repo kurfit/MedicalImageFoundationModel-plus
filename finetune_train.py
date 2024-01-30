@@ -115,3 +115,6 @@ def main():
             outputs = net(inputs)
             loss = loss_function(outputs, labels)
             loss.backward()
+            optimizer.step()
+            lr_scheduler.step()
+      
