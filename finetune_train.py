@@ -118,4 +118,5 @@ def main():
             optimizer.step()
             lr_scheduler.step()
             current_lr = lr_scheduler.get_last_lr()[0]
-            learnin
+            learning_rate.append(current_lr)           
+            epoch_loss += loss.item(
