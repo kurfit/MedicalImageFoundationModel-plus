@@ -119,4 +119,5 @@ def main():
             lr_scheduler.step()
             current_lr = lr_scheduler.get_last_lr()[0]
             learning_rate.append(current_lr)           
-            epoch_loss += loss.item(
+            epoch_loss += loss.item()
+            epoch_len = len(train_ds) // train_loader.batch_size
