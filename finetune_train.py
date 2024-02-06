@@ -121,3 +121,4 @@ def main():
             learning_rate.append(current_lr)           
             epoch_loss += loss.item()
             epoch_len = len(train_ds) // train_loader.batch_size
+            print(f"{step}/{epoch_len}, train_loss: {loss.item(
