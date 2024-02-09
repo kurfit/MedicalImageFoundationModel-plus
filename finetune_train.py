@@ -124,4 +124,5 @@ def main():
             print(f"{step}/{epoch_len}, train_loss: {loss.item():.4f}")
             writer.add_scalar("train_loss", loss.item(), epoch_len * epoch + step)
         epoch_loss /= step
-        train_loss_values.append(epo
+        train_loss_values.append(epoch_loss)
+        print(f"epoch {epoch + 1} average loss: {epoch_
