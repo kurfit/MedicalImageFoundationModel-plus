@@ -128,4 +128,6 @@ def main():
         print(f"epoch {epoch + 1} average loss: {epoch_loss:.4f}")
 
         if (epoch + 1) % val_interval == 0:
-   
+            net.eval()
+            with torch.no_grad():
+       
