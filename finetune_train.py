@@ -130,4 +130,4 @@ def main():
         if (epoch + 1) % val_interval == 0:
             net.eval()
             with torch.no_grad():
-       
+                y_pred = torch.tensor([], dtype=torch.float32, device
