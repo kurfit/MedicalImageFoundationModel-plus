@@ -131,4 +131,6 @@ def main():
             net.eval()
             with torch.no_grad():
                 y_pred = torch.tensor([], dtype=torch.float32, device=device)
-                y = torch.tensor([], dtype=torch.long, 
+                y = torch.tensor([], dtype=torch.long, device=device)
+                for val_data in val_loader:
+                
