@@ -133,4 +133,5 @@ def main():
                 y_pred = torch.tensor([], dtype=torch.float32, device=device)
                 y = torch.tensor([], dtype=torch.long, device=device)
                 for val_data in val_loader:
-                    val_images, val_labels = val_data["img"].to(device), val_d
+                    val_images, val_labels = val_data["img"].to(device), val_data["label"].to(device)
+                    y_pred = torch.cat(
