@@ -134,4 +134,5 @@ def main():
                 y = torch.tensor([], dtype=torch.long, device=device)
                 for val_data in val_loader:
                     val_images, val_labels = val_data["img"].to(device), val_data["label"].to(device)
-                    y_pred = torch.cat(
+                    y_pred = torch.cat([y_pred, net(val_images)], dim=0)
+                    y = torc
