@@ -137,4 +137,5 @@ def main():
                     y_pred = torch.cat([y_pred, net(val_images)], dim=0)
                     y = torch.cat([y, val_labels], dim=0)
 
-                acc_value = torch.eq(
+                acc_value = torch.eq(y_pred.argmax(dim=1), y)
+                acc_metric = acc_value.sum()
