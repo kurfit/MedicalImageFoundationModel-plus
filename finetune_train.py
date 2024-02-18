@@ -135,4 +135,6 @@ def main():
                 for val_data in val_loader:
                     val_images, val_labels = val_data["img"].to(device), val_data["label"].to(device)
                     y_pred = torch.cat([y_pred, net(val_images)], dim=0)
-                    y = torc
+                    y = torch.cat([y, val_labels], dim=0)
+
+                acc_value = torch.eq(
