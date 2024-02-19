@@ -142,4 +142,5 @@ def main():
                 y_onehot = [post_label(i) for i in decollate_batch(y, detach=False)]
                 y_pred_act = [post_pred(i) for i in decollate_batch(y_pred)]
                 auc_metric(y_pred_act, y_onehot)
-                au
+                auc_result = auc_metric.aggregate()
+                auc_metric.reset
