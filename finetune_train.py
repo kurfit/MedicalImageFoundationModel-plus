@@ -143,4 +143,6 @@ def main():
                 y_pred_act = [post_pred(i) for i in decollate_batch(y_pred)]
                 auc_metric(y_pred_act, y_onehot)
                 auc_result = auc_metric.aggregate()
-                auc_metric.reset
+                auc_metric.reset()
+                accuracy_values.append(acc_metric)
+       
