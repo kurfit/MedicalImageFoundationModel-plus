@@ -150,4 +150,5 @@ def main():
                 if acc_metric > best_metric:
                     best_metric = acc_metric
                     best_metric_epoch = epoch + 1
-                    torch.save(net.stat
+                    torch.save(net.state_dict(), "best_metric_classifier.pth")
+                
