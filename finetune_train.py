@@ -146,4 +146,6 @@ def main():
                 auc_metric.reset()
                 accuracy_values.append(acc_metric)
                 auc_values.append(auc_result)
-                del y_pred
+                del y_pred_act, y_onehot
+                if acc_metric > best_metric:
+     
