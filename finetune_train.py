@@ -153,4 +153,4 @@ def main():
                     torch.save(net.state_dict(), "best_metric_classifier.pth")
                     print("saved new best metric model")
                 print(
-          
+                    "current epoch: {} current accuracy: {:.4f} current AUC: {
