@@ -157,4 +157,5 @@ def main():
                         epoch + 1, acc_metric, auc_result, best_metric, best_metric_epoch
                     )
                 )
-          
+                writer.add_scalar("val_accuracy", acc_metric, epoch + 1)
+    prin
