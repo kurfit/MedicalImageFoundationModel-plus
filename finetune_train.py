@@ -154,4 +154,7 @@ def main():
                     print("saved new best metric model")
                 print(
                     "current epoch: {} current accuracy: {:.4f} current AUC: {:.4f} best accuracy: {:.4f} at epoch {}".format(
-                        epoch + 1, acc_metric, auc_result, best_metric, best_met
+                        epoch + 1, acc_metric, auc_result, best_metric, best_metric_epoch
+                    )
+                )
+          
