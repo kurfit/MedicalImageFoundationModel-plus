@@ -158,4 +158,7 @@ def main():
                     )
                 )
                 writer.add_scalar("val_accuracy", acc_metric, epoch + 1)
-    print(f"train completed, best_metric: {best_metric:.4f} at ep
+    print(f"train completed, best_metric: {best_metric:.4f} at epoch: {best_metric_epoch}")
+    writer.close()  
+    
+if __name
