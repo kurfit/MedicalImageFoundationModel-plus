@@ -161,4 +161,5 @@ def main():
     print(f"train completed, best_metric: {best_metric:.4f} at epoch: {best_metric_epoch}")
     writer.close()  
     
-if __name
+if __name__=="__main__":
+    main()
