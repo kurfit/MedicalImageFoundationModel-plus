@@ -187,3 +187,79 @@ def main_worker(args):
             
             outputs_v1, hidden_v1 = model(inputs)
             outputs_v2, hidden_v2 = model(inputs_2)
+    
+            flat_out_v1 = outputs_v1.flatten(start_dim=1, end_dim=4)
+            flat_out_v2 = outputs_v2.flatten(start_dim=1, end_dim=4)
+    
+            r_loss = recon_loss(outputs_v1, gt_input)
+            cl_loss = contrastive_loss(flat_out_v1, flat_out_v2)
+            
+            # Adjust the CL loss by Recon Loss
+            total_loss = r_loss + cl_loss * r_loss
+    
+            total_loss.backward()
+    
+            optimizer.step()
+            epoch_loss += total_loss.item()
+            step_loss_values.append(total_loss.item())
+    
+            # CL & Recon Loss Storage of Value
+            epoch_cl_loss += cl_loss.item()
+            epoch_recon_loss += r_loss.item()
+    
+            step_end_time = time.time()
+            print(
+                f"{step}/{len(train_ds) // train_loader.batch_size}, "
+                f"train_loss: {total_loss.item():.4f}, "
+                f"step time taken: {step_end_time-step_start_time}s"
+                )
+            end = time.time()
+    
+        epoch_loss /= step
+        epoch_cl_loss /= step
+        epoch_recon_loss /= step
+    
+        epoch_loss_values.append(epoch_loss)
+        epoch_cl_loss_values.append(epoch_cl_loss)
+        epoch_recon_loss_values.append(epoch_recon_loss)
+        print(f"epoch {epoch + 1} average loss: {epoch_loss:.4f}")
+    
+        if epoch % val_interval == 0:
+            print('Entering Validation for epoch: {}'.format(epoch+1))
+            total_val_loss = 0
+            val_step = 0
+            model.eval()
+            for val_batch in val_loader:
+                val_step += 1
+                #start_time = time.time()
+                inputs, gt_input = (
+                    val_batch["img_drop_1"].to(device),
+                    val_batch["gt_img"].to(device),
+                )
+                print('Input shape: {}'.format(inputs.shape))
+                outputs, outputs_v2 = model(inputs)
+                val_loss = recon_loss(outputs, gt_input)
+                total_val_loss += val_loss.item()
+                #end_time = time.time()
+    
+            total_val_loss /= val_step
+            val_loss_values.append(total_val_loss)
+            print(f"epoch {epoch + 1} Validation average loss: {total_val_loss:.4f}")#, " f"time taken: {end_time-start_time}s")
+    
+            if total_val_loss < best_val_loss:
+                print(f"Saving new model based on validation loss {total_val_loss:.4f}")
+                best_val_loss = total_val_loss
+                if dist.get_rank() == 0:
+                    torch.save(model.state_dict(), os.path.join(logdir_path, 'best_model.pth'))
+    
+            plt.figure(1, figsize=(8, 8))
+            plt.subplot(2, 2, 1)
+            plt.plot(epoch_loss_values)
+            plt.grid()
+            plt.title('Training Loss')
+    
+            plt.subplot(2, 2, 2)
+            plt.plot(val_loss_values)
+            plt.grid()
+            plt.title('Validation Loss')
+    
