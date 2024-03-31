@@ -263,3 +263,36 @@ def main_worker(args):
             plt.grid()
             plt.title('Validation Loss')
     
+            plt.subplot(2, 2, 3)
+            plt.plot(epoch_cl_loss_values)
+            plt.grid()
+            plt.title('Training Contrastive Loss')
+    
+            plt.subplot(2, 2, 4)
+            plt.plot(epoch_recon_loss_values)
+            plt.grid()
+            plt.title('Training Recon Loss')
+    
+            plt.savefig(os.path.join(logdir_path, 'loss_plots.png'))
+            plt.close(1)
+    
+    all_end_time = time.time()
+    dist.destroy_process_group()
+    print('Done')
+    print(f"total time taken: {all_end_time-all_start_time}s")
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--traindir", default="./train", type=str, help="directory of train dataset")
+    parser.add_argument("--testdir", default="./test", type=str, help="directory of test dataset")
+    parser.add_argument("--logdir", default="./log", type=str, help="directory of log and model")
+    parser.add_argument("--cachedir",default="./Cache", type=str, help="directory of persistent cache")
+    
+    parser.add_argument("--local_rank", type=int, help="node rank for distributed training")
+    parser.add_argument("--epochs", default=300, type=int, metavar="N", help="number of total epochs to run")
+    args = parser.parse_args()
+    
+    main_worker(args)
+
+if __name__ == "__main__":
+    main()
